@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 
 export const getAbout = async (req: Request, res: Response) => {
     try {
-        const about = await AboutModel.find();
+        const about = await AboutModel.findOne();
         res.json(about);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching about', error });
